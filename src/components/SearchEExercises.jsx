@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { Box, Button, Stack, TextField, Typography} from '@mui/material'
 
+import { exerciseOptions, fetchData } from '../utils/fetchData'
 
 const SearchEExercises = () => {
 
@@ -9,7 +10,9 @@ const SearchEExercises = () => {
 
   const handleSearch = async () =>{
     if(search){
-      // const exerciseData = await fetchDate();
+      const exerciseData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
+      
+      console.log(exerciseData)
     }
   }
 
